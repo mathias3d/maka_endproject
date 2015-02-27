@@ -59,13 +59,10 @@ if ( checkSession() && isset($_POST["searchBox"]) && !empty($_POST["searchBox"])
 	{
 		$sql = "SELECT tag
 				FROM post_tags
-
 				INNER JOIN tag_connect
 				ON post_tags.tag_id = tag_connect.tag_id
-
 				INNER JOIN user_posts
 				ON tag_connect.post_id = user_posts.post_id
-
 				WHERE tag LIKE '%{$tag}%' AND user_posts.post_active = 1
 				LIMIT 6";
 

@@ -28,7 +28,12 @@ if ( checkSession() && isset($_POST["like"]) && !empty($_POST["like"]) )
 
 		// DELETE OLD like from DB
 		$sql = "DELETE FROM user_likes WHERE user_id = '{$userId}' AND liked_post_id = '{$likeId}'";
-		mysqli_query($db, $sql);
+
+		//run and check query
+		if ( !mysqli_query($db, $sql) ) 
+		{
+			logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
+		} 
 	}
 	else
 	{
@@ -37,7 +42,12 @@ if ( checkSession() && isset($_POST["like"]) && !empty($_POST["like"]) )
 
 		// Insert NEW like to DB
 		$sql = "INSERT INTO user_likes (user_id, liked_post_id) VALUES ('$userId', '$likeId')";
-		mysqli_query($db, $sql);
+		
+		//run and check query
+		if ( !mysqli_query($db, $sql) ) 
+		{
+			logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
+		} 
 	}
 
 	// close connection 

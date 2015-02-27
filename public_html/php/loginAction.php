@@ -27,7 +27,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user"], $_POST["pwd"]
 	}
 	else
 	{
-		//logError( "sql query failed. " . basename(__FILE__), "thisIsWrong" );
+		logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__)  );
 	}
 
 	if ($rowcount == 1) 

@@ -21,6 +21,11 @@ if ( checkSession() == true && isset($_POST["follow"]) && !empty($_POST["follow"
 					 GROUP BY follow_user_id";
 
 	$result 	  = mysqli_query($db, $sql);
+
+	//
+	// check error here and log them
+	//
+
 	$numFollowers = (int)mysqli_fetch_assoc($result)["count"];
 
 	mysqli_free_result($result);
@@ -30,7 +35,12 @@ if ( checkSession() == true && isset($_POST["follow"]) && !empty($_POST["follow"
 	{
 		// REMOVE ID from DB
 		$sql = "DELETE FROM user_follows WHERE user_id = '{$userId}' AND follow_user_id = '{$followId}'";
-		mysqli_query($db, $sql);
+
+		//run and check query
+		if ( !mysqli_query($db, $sql) ) 
+		{
+			logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
+		} 
 
 		// -1 follower 
 		$numFollowers = $numFollowers -1;
@@ -40,7 +50,12 @@ if ( checkSession() == true && isset($_POST["follow"]) && !empty($_POST["follow"
 	{	
 		// Insert NEW ID to DB
 		$sql = "INSERT INTO user_follows (user_id, follow_user_id) VALUES ('$userId', '$followId')";
-		mysqli_query($db, $sql);
+		
+		//run and check query
+		if ( !mysqli_query($db, $sql) ) 
+		{
+			logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
+		} 
 
 		// +1 follower 
 		$numFollowers = $numFollowers +1;

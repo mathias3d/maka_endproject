@@ -95,13 +95,11 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" )
 	// run and check sql query
 	if ( !mysqli_query($db, $sql) ) 
 	{
-		$makeMessage .= "Något gick fel, inget uppdaterades";
-		$_SESSION["messages"] = array("text" => $makeMessage );
+		logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
 
-/*		header("Location: ../public_html/profilePage.php?page=editProfile");
-*/		exit;
+		$makeMessage .= "Något gick fel, inget uppdaterades";
 	}
-	// else data was inserted, everything is fine :)
+	
 	// close db connection
 	mysqli_close($db);
 

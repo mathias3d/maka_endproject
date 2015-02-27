@@ -76,7 +76,7 @@ if ( !checksession() )
 			// run and check sql query
 			if ( !mysqli_query($db, $sql) ) 
 			{
-				logError( "sql query failed, ". mysqli_error($db) . " " . basename(__FILE__) );
+				logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
 				header("Location: ../index.php");
 				exit;
 			}
@@ -89,7 +89,7 @@ if ( !checksession() )
 			// run and check sql query 2
 			if ( !mysqli_query($db, $sql) ) 
 			{
-				logError( "sql query failed. " . basename(__FILE__) );
+				logError( "sql query failed. " . mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
 				header("Location: ../index.php");
 				exit;
 			}
@@ -104,7 +104,7 @@ if ( !checksession() )
 
 			if ( !mkdir($path) ) 
 			{
-			    logError( "mkdir failed to create folder. " . basename(__FILE__) );
+			    logError( "mkdir failed to create folder. " . basename(__FILE__), dirname(__FILE__)  );
 			    header("Location: ../public_html/index.php");
 				exit;
 			}

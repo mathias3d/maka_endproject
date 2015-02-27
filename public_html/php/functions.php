@@ -117,7 +117,7 @@ function connectToDb()
 	/* check connection */
 	if ( mysqli_connect_errno() ) 
 	{
-	    logError("Connect failed:" . " " . mysqli_connect_error(), dirname(__FILE__) );
+	    logError("Connect failed:" . " " . mysqli_connect_error(), dirname(__FILE__), dirname(__FILE__) );
 	    exit;
 	}
 	else
@@ -135,7 +135,7 @@ function getDbContent($sql)
 
 	if ( !$result = mysqli_query($db, $sql) ) 
 	{ 
-		logError("mysqli_query fail:" . " " . mysqli_error($db), dirname(__FILE__) );
+		logError("mysqli_query fail:" . " " . mysqli_error($db), dirname(__FILE__), dirname(__FILE__) );
     }
     else
     {
@@ -289,12 +289,13 @@ function checkSession()
 function logOutUser()
 {
 	@session_start();
+
 	session_unset(); 
 	session_destroy();
 
 	// set lifetime of cookie to 0 to remove the coockie file
-	setcookie("loggedIn", "", 0);
-	setcookie("user", "", 0);
+	//setcookie("loggedIn", "", 0);
+	//setcookie("user", "", 0);
 	
 	// Start empty session
 	session_start();

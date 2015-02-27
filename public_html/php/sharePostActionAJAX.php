@@ -23,7 +23,7 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sha
 	// run and check sql query
 	if ( !mysqli_query($db, $sql) ) 
 	{
-		logError( "sql query failed, ". mysqli_error($db) . " " . basename(__FILE__) );
+		logError( "sql query failed, ". mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__) );
 		exit;
 	}
 

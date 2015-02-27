@@ -32,7 +32,6 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" )
 	if ( strlen($text) > 140 ) 
 	{
 		$_SESSION["messages"] = array( "text" => "Inlägget innehåller för många tecken " );
-		/*header('Location: ../public_html/index.php');*/
 		exit;
 	}
 
@@ -103,7 +102,7 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" )
 	// run and check sql query
 	if ( !mysqli_query($db, $sql) ) 
 	{
-		logError( "sql query failed, ". mysqli_error($db) . " " . basename(__FILE__) );
+		logError( "sql query failed, ". mysqli_error($db) . " " . basename(__FILE__), dirname(__FILE__)  ); 
 		exit;
 	}
 
