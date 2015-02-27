@@ -46,8 +46,6 @@ $userEmail 	= $result[0]["user_email"];
 	</div><!-- end.article-wrapper -->
 </article><!-- end.article-box -->
 
-
-
 <article class="article-box">
 	<div class="row article-wrapper">
 		<div class="col-sm-12 article-post">
@@ -64,7 +62,7 @@ $userEmail 	= $result[0]["user_email"];
 					</section>						
 					<hr>
 					<div class="col-sm-12 clearfix">	                
-	                	<a href="php/endAccountAction.php" class="button pull-right">AVSLUTA MEDLEMSKAPET</a>	            
+	                	<a id="endAccountBtn" href="php/endAccountAction.php" class="button pull-right">AVSLUTA MEDLEMSKAPET</a>	            
 					</div>
 				</form>
 			</div>
@@ -73,6 +71,5 @@ $userEmail 	= $result[0]["user_email"];
 	</div><!-- end.article-wrapper -->
 </article><!-- end.article-box -->
 
-
-<div id="posts">
-</div>
+<div id="popup"></div>
+<div id="posts"></div>

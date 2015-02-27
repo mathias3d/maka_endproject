@@ -24,6 +24,27 @@ function printMessage(msg)
 
 
 /* #################################################
+   # END ACCOUNT BUTTON
+   ################################################# */
+$(document).on('click', '#endAccountBtn', function(event) 
+{
+	event.preventDefault();
+
+	var text    = 'Är du säker på att du vill avsluta ditt konto? <br>'; 
+	var buttonY = '<a href="php/endAccountAction.php"><button> Ja </button></a>';
+	var buttonN = '<a id="abort"><button> Avbryt </button></a>';
+
+	$("#popup").html("<div class='popup-body'>"+text+buttonY+buttonN+"</div>");
+});
+
+$(document).on('click', '#abort', function(event) 
+{
+	$(".popup-body").remove();
+});
+
+
+
+/* #################################################
    # PAGINATION FUNCTIONS
    ################################################# */
 function getUrlVars() 

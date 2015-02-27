@@ -5,8 +5,6 @@ uppdatera/kontrollera postAction.php så att alla variabler stämmer
 se till att om man avslutar kontot så skall man inte se inläggen eller komentarerna i sökfunktionen eller på något annat sett
 Användning av user_active kolumnen för "ALLA" db queries. och post_active
 
-VARNING PÅ radera post... radera konto i js
-
 använda korta url / Använd htaccess för att sätta korta url, använda fake urls 
 
 Fixa alla meddelanden så att dom skivs ut överallt / fixa så att inte dubbla meddelanden från js och php skrivs ut 
