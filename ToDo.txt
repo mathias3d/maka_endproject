@@ -1,0 +1,180 @@
+
+##### MÅSTE #####
+uppdatera/kontrollera postAction.php så att alla variabler stämmer 
+
+se till att om man avslutar kontot så skall man inte se inläggen eller komentarerna i sökfunktionen eller på något annat sett
+Användning av user_active kolumnen för "ALLA" db queries. och post_active
+
+VARNING PÅ radera post... radera konto i js
+
+använda korta url / Använd htaccess för att sätta korta url, använda fake urls 
+
+Fixa alla meddelanden så att dom skivs ut överallt / fixa så att inte dubbla meddelanden från js och php skrivs ut 
+
+ta bort hårdkodningen av @username i inläggen, så att om user ändrar sitt @username så fungerar fortfarande länkarna
+
+om en användare avslutar kontot så tas kommentarer och inlägg bort... se till att siffrorna uppdateras på kommentarerna
+
+
+
+##### BORDE #####
+
+gå igenom alla funktioner / Bättre uppdelning i funktionerna / bättre funktioner
+
+Bättre error checking överallt  /  bättre error-log function / se till att funktionen som loggar error fungerar och lägg till den "överallt"
+
+Kombinera php och javascript errormessages, skapa en javascript funktion som tar php sessionens[message] och printar det via javascript
+
+se till att alla ajax funktioner fungerar utan javascript / Använd ajax OCH php vid alla actions
+
+Gå igenom min css, ta bort effektivisera, fixa crossbrowser och responsive
+
+ändra så att om orginalinlägget raderas så raderas även inläggen som har retweetat orginalinlägget
+
+
+##### KANSKE #####
+
+ändra från user_id och istället kör på @namn vid sökfunktionen och alla inläggs länkar m.fl.
+
+formatera bilderna vid uppladdning (beskärning, namn, storlek)
+
+sammla alla uppladeade bilder i ett bildgalleri för varje användare
+
+sammla alla länkade youtube i ett filmgalleri
+
+välkommst text på profilsidans första sida om man inte har gjort några inlägg?
+
+delete picture (sätt tillbaka standardbilden)...
+
+extra youtube knapp där man kan lägga till youtube video (så att man tydligt ser att det är möjligt)
+
+se till att söklistan "@mathias" går att nå med piltangenterna (inte bara tab)
+
+fixa så att man kan göra samma på Kommentarer som på inlägg (bild, gilla, radera etc..)
+
+Dela upp .js filerna i: generic.js (alla sidor) och page.js (sidspecifik)
+
+se till att det blir mindre kodupprepning
+
+activeringsmail
+
+
+
+
+
+
+
+-------------------------------
+FONTS  (just a reminder)
+-------------------------------
+googlefonts LOGGA: Over the Rainbow
+
+
+-------------------------------
+STRUCTURE OF SITE (not latest version)
+-------------------------------
+
+
+index.php	[
+				[link]    => 	logout.php
+				[include] =>[
+								header.php 			  [action] 	=> searchAction.php
+								footer.php
+								loginform.php		  [action] 	=> loginAction.php
+						  	]
+
+				[GET] =>	[
+								postPages.php		  [include] => postForeachFrame.php	
+													  [action]  => postAction.php
+
+								searchResults.php	  [include] => postForeachFrame.php
+
+								createAccountPage.php [action] 	=> createAccountAction.php
+							]
+			]
+
+
+profilePage.php [
+					[link]    => 	logout.php
+					[include] =>[
+									header.php 			  [action] 	=> searchAction.php
+									footer.php
+									loginform.php		  [action] 	=> loginAction.php
+							  	]
+
+					[GET] =>	[
+									profileUserPosts.php  [include] => postForeachFrame.php	
+														  [action]  => postAction.php
+
+									settingsProfile.php	  [action]  => settingsProfileAction.php
+
+									editProfile.php		  [action]  => editProfileAction.php
+								]
+				]
+
+
+
+-------------------------------
+DATABASE STRUCTURE (not latest version)
+-------------------------------
+DB[
+	user_accounts[
+					id 				=> 1 (AI)
+					user_id			=> 1 (random id hashed, in creation check if exists)
+					user_pwd	 	=> 123abc456efg ( hashed )
+					user_email	 	=> mathias3dartist@gmail.com
+				]
+
+	user_info	[
+					id 				=> 1 (AI)
+					user_id			=> 1 (same as in user_accounts)
+					user_full_name	=> mathias carlsson
+					user_name		=> @mathias 
+					user_regdate 	=> 2001-11-11
+					user_img 		=> photo.jpg
+					user_bg_img	 	=> background.png
+					user_text		=> välkommen till min profil...
+					user_active		=> 1 (1 or 0, yes or no)
+				]
+
+	user_posts 	[
+					post_id			=> 109 (AI)
+					user_id			=> 1 
+
+					post_date		=> 2055-02-22
+					post_txt 		=> bla bla bla... 
+					post_img		=> bild.jpeg
+					
+
+					post_reply	  	=> 123 ( reply to post_id)(if null this is a post and not a comment)
+				]
+
+	user_likes 	[
+					like_id			=> 109 (AI)
+					user_id			=> 1
+					liked_post_id	=> 2
+				]
+
+	user_follows[
+					follow_id		=> 9 (AI)
+					user_id			=> 1 
+					follow_user_id	=> 2 (user that is followed)
+				]
+
+	post_tags 	[
+					tag_id			=> 1999 (AI)
+					tag 			=> #bäst
+				]
+
+	tag_connect	[
+					id 				=> 1 (AI)
+					tag_id			=> 1999	(tag_id in post_tags)
+					post_id			=> 109 	(post_id in user_posts where tag is written)
+				]
+
+	--------VIEWS--------
+
+	something   [
+					id 				=> 1 
+				]
+  ]
