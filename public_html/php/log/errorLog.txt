@@ -1,0 +1,18 @@
+2015-02-25 19:19:13 Connect failed: Anslutningsförsöket misslyckades eftersom den anslutna datorn inte svarade inom en viss tid eller på grund av att den etablerade anslutningen till värddatorn inte längre fungerar.
+
+2015-02-26 10:51:49 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 10:53:03 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 10:55:39 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 10:58:58 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 10:59:48 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 10:59:53 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:00:58 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:01:21 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:03:34 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:03:43 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:04:39 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:04:46 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:04:55 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:06:09 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:13:34 Connect failed: Access denied for user 'root'@'localhost' (using password: YES)
+2015-02-26 11:17:29 Connect failed: Can't connect to MySQL server on 'community-129680.mysql.binero.se' (110)

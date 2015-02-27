@@ -1,0 +1,26 @@
+## Error Pages
+
+# 403 forbidden 
+ErrorDocument 403 /mystuff/slutprojekt/public_html/error.php
+
+# 404 Not Found
+# 401 Auth Required 
+# 400 Bad Request 
+# 500 Internal Server Error 
+
+AddLanguage en .en # English
+
+Options -Indexes
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+Options All -Indexes 
+
+
+
+
+
+
+## Testing rewriting rule
+RewriteEngine On
+
+## Search for user with @username -> then sendToProfile
+RewriteRule @(.+) php/searchAction.php?searchBox=@$1 [NC]
