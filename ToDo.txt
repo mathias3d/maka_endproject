@@ -25,7 +25,7 @@ se till att alla ajax funktioner fungerar utan javascript / Använd ajax OCH php
 
 Gå igenom min css, ta bort effektivisera, fixa crossbrowser och responsive
 
-ändra så att om orginalinlägget raderas så raderas även inläggen som har retweetat orginalinlägget
+ändra så att om orginalinlägget raderas så raderas även inläggen som har retweetat orginalinlägget?
 
 
 ##### KANSKE #####

@@ -14,7 +14,7 @@
 			<ul>
 				<li>
 					<a id="fileButton" title="Ladda upp bild">
-						<p><i class="fa fa-camera fa-lg"></i></p>
+						<p><i class="fa fa-camera fa-lg"></i> Lägg till foto</p>
 					</a>
 				</li>
 				<li>

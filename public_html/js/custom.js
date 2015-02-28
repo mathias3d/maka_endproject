@@ -2,7 +2,7 @@ $(document).ready(function()
 {
 
 /* #################################################
-   # REMOVE PHP MESSAGE IF JAVASCRIPT IS ENABLED
+   # REMOVE PHP/JS MESSAGE IF JAVASCRIPT IS ENABLED
    ################################################# */
 setTimeout( function() 
 {
@@ -234,7 +234,6 @@ $( "#fileButton" ).click(function(event)
 /* #################################################
    # CREATE ACCOUNT or LOGGIN - FORM on startpage
    ################################################# */
-
 // create account FORM
 $(document).on('click', '#createAccountBtn', function(event) 
 {
@@ -266,9 +265,83 @@ $(document).on('click', '#loginAccountBtn', function(event)
 });
 
 /* #################################################
-   # VALIDATION - CREATE ACCOUNT or LOGGIN on startpage
+   # VALIDATION - CREATE ACCOUNT / LOGGIN on startpage
    ################################################# */
+// Login account FORM
+$(document).on('click', '#loginForm', function(event) 
+{
+	var input 	 = $(this).find("section").find(":input");
+	var username = $(this).find("[name='user']");
+	
+	$(input, this).each(function(index, el)
+	{
+        if ( !$(el).val() ) 
+        {
+        	$(this).css("border-color","#c00");
+        	event.preventDefault();
+		}
+	});
 
+	if (username.val().indexOf("@") === -1)
+	{
+		username.css("border-color","#c00");
+        event.preventDefault();
+	}
+
+});
+
+// create account FORM
+$(document).on('click', '#accountForm', function(event) 
+{
+	var input = $(this).find("section").find(":input");
+	var email = $(this).find("[name='email']");
+	
+	$(input, this).each(function(index, el)
+	{
+        if ( !$(el).val() ) 
+        {
+        	$(this).css("border-color","#c00");
+        	event.preventDefault();
+		}
+	});
+
+	if (email.val().indexOf("@") === -1 || email.val().indexOf(".") === -1)
+	{
+		email.css("border-color","#c00");
+        event.preventDefault();
+	}
+
+});
+
+function clearBorder()
+{
+	if(this.value.length > 0)
+	{
+		this.style.borderColor = "";
+	}
+	else
+	{
+		this.style.borderColor = "#c00";
+	}
+}
+
+//fix clearborder so it will work even after the forms have changed several times (clicking the registrera nytt konto)
+
+// Login account FORM
+var user = $("#loginForm").find("[name='user']");
+var pwd  = $("#loginForm").find("[name='pwd']");
+
+user.on("input", clearBorder);
+pwd.on("input", clearBorder);
+
+// create account FORM
+var user2  = $("#accountForm").find("[name='user']");
+var pwd2   = $("#accountForm").find("[name='pwd']");
+var email2 = $("#accountForm").find("[name='email']");
+
+user2.on("input", clearBorder);
+pwd2.on("input", clearBorder);
+email2.on("input", clearBorder);
 
 
 

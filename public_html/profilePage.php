@@ -40,7 +40,7 @@ $regdate	  = date("d/m - Y", strtotime("$row[user_regdate]"));
 <html lang="sv">
 <head>
 	<meta charset="UTF-8">
-	<title>Kvitter</title>
+	<title>B-community</title>
 	<meta name="description" content="">
 
 	<!-- Mobile Specific Meta -->
@@ -51,7 +51,7 @@ $regdate	  = date("d/m - Y", strtotime("$row[user_regdate]"));
 	<![endif]-->
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="img/icons/favicon.ico">
+	<link rel="shortcut icon" href="img/design/favicon.ico">
 	<!-- font -->
 	<link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
 
