@@ -57,7 +57,7 @@ if ( checkSession() && isset($_POST["searchBox"]) && !empty($_POST["searchBox"])
 
 	if ( $tag !== false ) 
 	{
-		$sql = "SELECT tag
+		$sql = "SELECT DISTINCT tag
 				FROM post_tags
 				INNER JOIN tag_connect
 				ON post_tags.tag_id = tag_connect.tag_id
