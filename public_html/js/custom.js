@@ -237,7 +237,6 @@ $( "#fileButton" ).click(function(event)
 // create account FORM
 $(document).on('click', '#createAccountBtn', function(event) 
 {
-
 	event.preventDefault();
 	
 	var url = "includes/createAccount_form.php";
@@ -289,7 +288,7 @@ $(document).on('click', '#loginForm', function(event)
 	}
 
 });
-
+/*
 // create account FORM
 $(document).on('click', '#accountForm', function(event) 
 {
@@ -311,7 +310,7 @@ $(document).on('click', '#accountForm', function(event)
         event.preventDefault();
 	}
 
-});
+});*/
 
 function clearBorder()
 {
@@ -334,7 +333,7 @@ var pwd  = $("#loginForm").find("[name='pwd']");
 user.on("input", clearBorder);
 pwd.on("input", clearBorder);
 
-// create account FORM
+/*// create account FORM
 var user2  = $("#accountForm").find("[name='user']");
 var pwd2   = $("#accountForm").find("[name='pwd']");
 var email2 = $("#accountForm").find("[name='email']");
@@ -343,7 +342,7 @@ user2.on("input", clearBorder);
 pwd2.on("input", clearBorder);
 email2.on("input", clearBorder);
 
-
+*/
 
 
 /* #################################################

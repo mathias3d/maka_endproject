@@ -567,7 +567,6 @@ function checkAndPrintMessages()
 function getRequiredPage($allowedPages, $standardPage)
 {
 	// include different pages based on GET-links (.subnav a href)
-
 	if ( isset($_GET["page"]) ) 
 	{	
 		$page 		  = $_GET["page"];
@@ -575,6 +574,7 @@ function getRequiredPage($allowedPages, $standardPage)
 		//if someone edits the GET-link
 		if ( ! in_array($page, $allowedPages) ) 
 		{
+			//this needs to be fixed on profilepage (header already sent), but is working on startpage?
 			// reload page without the GET
 			header("Location: ../profilePage.php");
 			exit;

@@ -1,16 +1,19 @@
 <?php
 require_once("functions.php");
 
+
 // if user is not logged in.. Good then user can create one :)
 if ( !checksession() ) 
 {
+
 	//if the data is posted && isset
-	if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"], $_POST["pwd"], $_POST["email"]) )
+	if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user"], $_POST["pwd"], $_POST["email"]) )
 	{	
+
 		//if all fields are filled 
-		if ( !empty($_POST["name"]) && !empty($_POST["pwd"]) && !empty($_POST["email"])) 
+		if ( !empty($_POST["user"]) && !empty($_POST["pwd"]) && !empty($_POST["email"])) 
 		{
-			$fullName  	= $_POST["name"];
+			$fullName  	= $_POST["user"];
 			$email   	= $_POST["email"];
 			$password   = $_POST["pwd"];
 
