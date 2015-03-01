@@ -55,8 +55,6 @@ function countNews()
 }
 
 
-
-
 function countPostComments($postId)
 {
 	$db 	= connectToDb();

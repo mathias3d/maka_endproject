@@ -1,6 +1,6 @@
 <?php 
 if (!function_exists('checkAndPrintMessages')) 
-	require_once("php/functions.php"); 
+	require_once("../php/functions.php"); 
 ?>
 
 <form class="loginForm clearfix" role="form" id="loginForm" action="php/loginAction.php" accept-charset="utf-8" method="POST">

@@ -84,7 +84,6 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" )
 	// make text-names to links
 	$text = namesToLinks($text);
 
-
 	if ( isset($_POST["makePost"]) ) 
 	{
 		// sql query
