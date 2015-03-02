@@ -2,12 +2,10 @@
 ##### MÅSTE #####
 uppdatera/kontrollera postAction.php så att alla variabler stämmer 
 
-se till att om man avslutar kontot så skall man inte se inläggen eller komentarerna i sökfunktionen eller på något annat sett
-Användning av user_active kolumnen för "ALLA" db queries. och post_active
-
 använda korta url / Använd htaccess för att sätta korta url, använda fake urls 
 
 Fixa alla meddelanden så att dom skivs ut överallt / fixa så att inte dubbla meddelanden från js och php skrivs ut 
+Kombinera php och javascript errormessages, skapa en javascript funktion som tar php sessionens[message] och printar det via javascript
 
 ta bort hårdkodningen av @username i inläggen, så att om user ändrar sitt @username så fungerar fortfarande länkarna
 
@@ -18,8 +16,6 @@ ta bort hårdkodningen av @username i inläggen, så att om user ändrar sitt @u
 gå igenom alla funktioner / Bättre uppdelning i funktionerna / bättre funktioner
 
 Bättre error checking överallt  /  bättre error-log function / se till att funktionen som loggar error fungerar och lägg till den "överallt"
-
-Kombinera php och javascript errormessages, skapa en javascript funktion som tar php sessionens[message] och printar det via javascript
 
 se till att alla ajax funktioner fungerar utan javascript / Använd ajax OCH php vid alla actions
 
@@ -52,4 +48,4 @@ Dela upp .js filerna i: generic.js (alla sidor) och page.js (sidspecifik)
 
 se till att det blir mindre kodupprepning
 
-activeringsmail
+activeringsmail?
