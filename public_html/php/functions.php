@@ -717,7 +717,7 @@ function embedYoutube($text)
     	$embed 	  = '<iframe src="//www.youtube.com/embed/'.$video_id.'" frameborder="0" allowfullscreen></iframe>';
 	}	
 	//remove "all" youtube links				
-	$text = preg_replace('%(https?://|www\.)*(youtube|youtu\.be)[a-z\.0-9/?=&]+%i', '', $text);
+	$text = preg_replace('%(https?://|www\.)*(youtube|youtu\.be)[a-z-_\.0-9/?=&]+%i', '', $text);
 	//remove all tags
 	$text = strip_tags($text);
 	return $text . "<br>" . $embed;

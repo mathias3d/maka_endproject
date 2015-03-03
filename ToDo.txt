@@ -9,6 +9,7 @@ Kombinera php och javascript errormessages, skapa en javascript funktion som tar
 
 ta bort hårdkodningen av @username i inläggen, så att om user ändrar sitt @username så fungerar fortfarande länkarna
 
+Ända koden så att man gör en ända anslutning till databasen per sida (index.php, profile.php, functions.php.....)
 
 
 ##### BORDE #####
