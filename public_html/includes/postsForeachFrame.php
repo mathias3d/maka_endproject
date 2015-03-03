@@ -160,15 +160,13 @@
 											<i class="fa fa-star"></i>
 										<?php endif ?>
 													
-										<span id="like<?= $postId ?>" class="numLikes"> 
-											<?= $likes ?>
-										</span>
+										<span id="like<?= $postId ?>" class="numLikes"><?= $likes ?></span>
 									</p>
 								</a>
 							</li>
 
 							<li>
-								<span title="Antal Kommentarer">
+								<a title="Antal Kommentarer">
 									<p>
 										<?php if ( isMyComment($postId) > 0 ): ?>
 											<i class="fa fa-comments-o liked"></i>
@@ -178,7 +176,7 @@
 
 										<span id="noCom" class="numLikes"><?= countPostComments($postId); ?></span>
 									</p>
-								</span>
+								</a>
 							</li>
 							
 							<li class="dropdown pull-right">

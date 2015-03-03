@@ -11,9 +11,10 @@ ta bort hårdkodningen av @username i inläggen, så att om user ändrar sitt @u
 
 Ända koden så att man gör en ända anslutning till databasen per sida (index.php, profile.php, functions.php.....)
 
+popup meddelande när man raderar ett inlägg (samma som radera konto)
+
 
 ##### BORDE #####
-
 gå igenom alla funktioner / Bättre uppdelning i funktionerna / bättre funktioner
 
 Bättre error checking överallt  /  bättre error-log function / se till att funktionen som loggar error fungerar och lägg till den "överallt"
@@ -24,16 +25,17 @@ Gå igenom min css, ta bort effektivisera, fixa crossbrowser och responsive
 
 ändra så att om orginalinlägget raderas så raderas även inläggen som har retweetat orginalinlägget?
 
+vem/vilka har gillat mitt inlägg?
+
 
 ##### KANSKE #####
-
 ändra från user_id och istället kör på @namn vid sökfunktionen och alla inläggs länkar m.fl.
 
 formatera bilderna vid uppladdning (beskärning, namn, storlek)
 
-sammla alla uppladeade bilder i ett bildgalleri för varje användare
+sammla alla uppladdade bilder i ett bildgalleri för varje användare
 
-sammla alla länkade youtube i ett filmgalleri
+sammla alla länkade "youtube" i ett filmgalleri
 
 välkommst text på profilsidans första sida om man inte har gjort några inlägg?
 
