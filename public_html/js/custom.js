@@ -37,11 +37,14 @@ $(document).on('click', '#endAccountBtn', function(event)
 	$("#popup").html("<div class='popup-body'>"+text+buttonY+buttonN+"</div>");
 });
 
+
+/* #################################################
+   # POPUP ABORT BUTTON
+   ################################################# */
 $(document).on('click', '#abort', function(event) 
 {
 	$(".popup-body").remove();
 });
-
 
 
 /* #################################################
@@ -411,7 +414,11 @@ $(document).on('click', '.likeButton', function(event)
    ################################################# */
 $(document).on('click', '.delete', function(event)
 {
-	event.preventDefault();
+	var text    = 'Är du säker på att du vill radera ditt inlägg? <br>'; 
+	var buttonY = '<a id="yesDeletePost"><button> Ja </button></a>';
+	var buttonN = '<a id="abort"><button> Avbryt </button></a>';
+
+	$("#popup").html("<div class='popup-body'>"+text+buttonY+buttonN+"</div>");
 
 	// Get some values from elements on the page:
 	var id 	 =  $( this ).attr("value");
@@ -422,25 +429,33 @@ $(document).on('click', '.delete', function(event)
 
 	var post = $( this ).closest(".article-box")
 
-	// Send the data using post
-	var posting = $.post( url, { del: id } );
+	$(document).on('click', '#yesDeletePost', function(event)
+	{
+		$(".popup-body").remove();
 
-	// ´when done....
-	posting.done(function( data ) {
+		// Send the data using post
+		var posting = $.post( url, { del: id } );
 
-		if (data) 
-		{
-			data = JSON.parse(data);
+		// ´when done....
+		posting.done(function( data ) {
 
-			post.html("").remove();
+			if (data) 
+			{
+				data = JSON.parse(data);
 
-			myStats.html("Skrivit " + (parseInt(number) - 1) + " st inlägg.");
+				post.html("").remove();
 
-			printMessage(data.msg);
-		};
-	
+				myStats.html("Skrivit " + (parseInt(number) - 1) + " st inlägg.");
+
+				printMessage(data.msg);
+			};
+		
+		});
+
 	});
 });
+
+
 
 /* #################################################
    # ARTICLES SHARE ACTION

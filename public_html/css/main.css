@@ -230,7 +230,7 @@ iframe{
   /* background-color: rgba(100,100,255,0.3); */
 }
 .popup-body {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);

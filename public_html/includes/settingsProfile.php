@@ -71,5 +71,4 @@ $userEmail 	= $result[0]["user_email"];
 	</div><!-- end.article-wrapper -->
 </article><!-- end.article-box -->
 
-<div id="popup"></div>
 <div id="posts"></div>
