@@ -187,12 +187,17 @@ function getUserLikes($userId)
 	return $likeIdsArr;
 }
 
-// fixa så att om en person som gillat inlägget inte är active längre så skall denna minska i antal
 function getThePostLikes($postId) 
 {
 	$postId 	= (int)$postId;
 	$db 		= connectToDb();
-	$result 	= mysqli_query($db, "SELECT count(*) FROM user_likes WHERE liked_post_id = {$postId}");
+	$sql 		= "SELECT count(*) 
+				   FROM user_likes 
+				   INNER JOIN user_info
+				   ON user_info.user_id = user_likes.user_id 
+  				   WHERE liked_post_id = '{$postId}' AND user_active = 1";
+
+	$result 	= mysqli_query($db, $sql);
 	
 	$row = mysqli_fetch_assoc($result);
 
