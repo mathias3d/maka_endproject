@@ -224,6 +224,25 @@ $( "#fileButton" ).click(function(event)
 });
 
 
+
+//////////////////////////////////// WORKING HERE ////////////////////////////////////
+// Youtube Link
+$( "#youtubeButton" ).click(function(event) 
+{
+	event.preventDefault();
+
+	var text    = 'Skriv in adressen till Youtube-videon <br>'; 
+	var buttonY = '<a id="useYoutube"><button> Använd </button></a>';
+	var buttonN = '<a id="abort"><button> Avbryt </button></a>';
+
+	$("#popup").html("<div class='popup-body'>"+text+buttonY+buttonN+"</div>");
+
+
+	$("input[name='youtube']").val("__linke here___"); 
+});
+////////////////////////////////// WORKING HERE END //////////////////////////////////
+
+
 /* #################################################
    # VALIDATION - POST / COMMENT ACTION
    ################################################# */

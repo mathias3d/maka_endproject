@@ -7,11 +7,18 @@
 		<textarea id="post_txt" name="post_txt" required maxlength="140"></textarea>
 		
 		<input id="fileInput" class="hidden" type="file" name="image">	
+		
+		<input type="hidden" name="youtube">
 
 		<input type="hidden" name="makePost">
 			
 		<div class="article-meny row">
 			<ul>
+				<li>
+					<a id="youtubeButton" title="Dela Youtube video">
+						<p><i class="fa fa-youtube fa-lg"></i></p>
+					</a>
+				</li>
 				<li>
 					<a id="fileButton" title="Ladda upp bild">
 						<p><i class="fa fa-camera fa-lg"></i> Lägg till foto</p>

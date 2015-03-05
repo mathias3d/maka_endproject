@@ -43,7 +43,7 @@ function logError($error, $dir)
 
 
 function countNews()
-{
+{		
 	$db 	= connectToDb();
 	//måste joina in user info så att jag kan sätta user_active = 1
 	$result = mysqli_query($db, "SELECT count(*) FROM user_posts WHERE post_reply = 0 AND post_active = 1");
@@ -844,10 +844,9 @@ function isTag($input)
 function getSearchResults($search)
 {
 	$array 	= [];
-
-	// connect to db
+	
 	$db 	= connectToDb();
-	//$search = mysqli_real_escape_string($db,$search);
+	$search = mysqli_real_escape_string($db,$search);
 
 	// sql query, match the search words and order by relevance 
 	$sql 	=  "SELECT *, MATCH (post_txt) AGAINST ('{$search}' IN BOOLEAN MODE) AS relevance 
