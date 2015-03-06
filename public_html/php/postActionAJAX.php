@@ -57,6 +57,11 @@ if ( checkSession() && $_SERVER["REQUEST_METHOD"] == "POST" )
 		$makeImage   = null;
 	}
 
+	########## YOUTUBE LINK button ###########
+	if ( isset($_POST["youtube"]) && !empty($_POST["youtube"]) )  
+	{
+		$text = $text . $_POST["youtube"];
+	}
 	
 	if ( $makeImage == null && $text == null )
 	{

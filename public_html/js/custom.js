@@ -140,7 +140,6 @@ $(window).scroll(function()
 });
 
 
-
 /* #################################################
    # POST / COMMENT ACTION
    ################################################# */
@@ -172,8 +171,9 @@ $(document).on('click', '#makePost', function(event)
     //reset Form
     $("#makePostForm").find("input[type=file]").val("");
     $("#fileName").html("");
+    $("input[name='youtube']").val("");
+    $("#youtubeButton p i.fa-check").remove();
     $("#makePostForm").trigger("reset");
-    
 });
 
 $(document).on('click', '.makeComment', function(event) 
@@ -224,23 +224,24 @@ $( "#fileButton" ).click(function(event)
 });
 
 
-
-//////////////////////////////////// WORKING HERE ////////////////////////////////////
 // Youtube Link
 $( "#youtubeButton" ).click(function(event) 
 {
-	event.preventDefault();
-
 	var text    = 'Skriv in adressen till Youtube-videon <br>'; 
+	var field	= '<input id="youtubelink" type="text">';
 	var buttonY = '<a id="useYoutube"><button> Använd </button></a>';
 	var buttonN = '<a id="abort"><button> Avbryt </button></a>';
 
-	$("#popup").html("<div class='popup-body'>"+text+buttonY+buttonN+"</div>");
-
-
-	$("input[name='youtube']").val("__linke here___"); 
+	$("#popup").html("<div class='popup-body'>"+text+field+buttonY+buttonN+"</div>");
 });
-////////////////////////////////// WORKING HERE END //////////////////////////////////
+
+$(document).on('click', '#useYoutube', function(event) 
+{
+	var y = $("#youtubelink").val(); 
+	$("input[name='youtube']").val(y); 
+	$("#youtubeButton p").append(' <i class="fa fa-check"></i>');
+	$(".popup-body").remove();
+});
 
 
 /* #################################################
